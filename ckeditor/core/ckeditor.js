@@ -142,8 +142,6 @@ CKEDITOR.on( 'instanceDestroyed', function() {
 		CKEDITOR.fire( 'reset' );
 } );
 
-// Load the bootstrap script.
-CKEDITOR.loader.load( '_bootstrap' ); // %REMOVE_LINE%
 
 // Tri-state constants.
 /**
@@ -202,3 +200,5 @@ CKEDITOR.TRISTATE_DISABLED = 0;
  *
  * @event reset
  */
+
+module.exports = CKEDITOR;

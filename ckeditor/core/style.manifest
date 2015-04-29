@@ -1,0 +1,5 @@
+{
+  "imports": [{"name": "/Libraries/TCKEditor/ckeditor/core/ckeditor_base", "local": "CKEDITOR"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/selection", "local": "core_selection"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/resourcemanager", "local": "core_resourcemanager"}]
+}

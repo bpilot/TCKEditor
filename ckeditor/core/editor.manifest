@@ -1,0 +1,13 @@
+{
+  "imports": [{"name": "/Libraries/TCKEditor/ckeditor/core/ckeditor_base", "local": "CKEDITOR"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/command", "local": "core_command"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/config", "local": "core_config"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/editor_basic", "local": "core_editor_basic"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/filter", "local": "core_filter"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/focusmanager", "local": "core_focusmanager"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/keystrokehandler", "local": "core_keystrokehandler"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/lang", "local": "core_lang"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/plugins", "local": "core_plugins"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/tools", "local": "core_tools"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/ui", "local": "core_ui"}]
+}

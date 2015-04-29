@@ -1,0 +1,5 @@
+{
+  "imports": [{"name": "/Libraries/TCKEditor/ckeditor/core/ckeditor_base", "local": "CKEDITOR"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/dom/node", "local": "dom_node"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/dom/document", "local": "dom_document"}]
+}

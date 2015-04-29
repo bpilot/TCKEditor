@@ -1,0 +1,17 @@
+{
+  "imports": [{"name": "/Libraries/TCKEditor/ckeditor/core/dom/comment", "local": "dom_comment"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/dom/document", "local": "dom_document"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/dom/documentfragment", "local": "dom_documentfragment"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/dom/domobject", "local": "dom_domobject"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/dom/element", "local": "dom_element"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/dom/elementpath", "local": "dom_elementpath"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/dom/event", "local": "dom_event"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/dom/iterator", "local": "dom_iterator"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/dom/node", "local": "dom_node"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/dom/nodelist", "local": "dom_nodelist"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/dom/range", "local": "dom_range"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/dom/rangelist", "local": "dom_rangelist"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/dom/text", "local": "dom_text"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/dom/walker", "local": "dom_walker"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/dom/window", "local": "dom_window"}]
+}

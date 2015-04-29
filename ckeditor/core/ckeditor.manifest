@@ -1,0 +1,17 @@
+{
+  "imports": [{"name": "/Libraries/TCKEditor/ckeditor/core/ckeditor_base", "local": "CKEDITOR"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/ckeditor_basic", "local": "core_ckeditor_basic"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/env", "local": "core_env"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/event", "local": "core_event"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/htmldataprocessor", "local": "core_htmldataprocessor"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/style", "local": "core_style"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/tools", "local": "core_tools"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/dom", "local": "core_dom"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/template", "local": "core_template"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/editor", "local": "core_editor"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/creators/inline", "local": "creators_inline"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/creators/themedui", "local": "creators_themedui"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/skin", "local": "core_skin"}],
+
+  "stylesheets": ["../contents.css"]
+}

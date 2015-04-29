@@ -50,6 +50,18 @@ CKEDITOR.scriptLoader = ( function() {
 		 * the script is loaded.
 		 */
 		load: function( scriptUrl, callback, scope, showBusy ) {
+
+// AI LABS KLUDGE BEGIN -----------
+console.log("TODO: DISABLE ATTEMPTS TO LOAD PLUGINS SCRIPTS!");
+scriptUrl = [];
+if (scriptUrl.length>0)
+{
+  console.log("LOADING!", arguments);
+  throw new Error("WTF");
+}
+// AI LABS KLUDGE END -----------------------
+
+
 			var isString = ( typeof scriptUrl == 'string' );
 
 			if ( isString )
