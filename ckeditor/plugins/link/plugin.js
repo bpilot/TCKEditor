@@ -72,16 +72,19 @@
 
 			if ( editor.ui.addButton ) {
 				editor.ui.addButton( 'Link', {
+          className: "link-btn", // AI LABS PATCH
 					label: editor.lang.link.toolbar,
 					command: 'link',
 					toolbar: 'links,10'
 				} );
 				editor.ui.addButton( 'Unlink', {
+          className: "link-btn", // AI LABS PATCH
 					label: editor.lang.link.unlink,
 					command: 'unlink',
 					toolbar: 'links,20'
 				} );
 				editor.ui.addButton( 'Anchor', {
+          className: "link-btn", // AI LABS PATCH
 					label: editor.lang.link.anchor.toolbar,
 					command: 'anchor',
 					toolbar: 'links,30'

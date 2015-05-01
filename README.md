@@ -8,3 +8,8 @@ LEARNED:
 ckeditor_base is the central, common file
 that defines the CKEDITOR.
 
+DIFFERENCES FROM AI LABS BASE:
+1) skin.getIconStyle() and getIcon() do not exist.
+   Instead, plugins should use a stylesheet and glyph to apply icon style.
+
+Each plugin with toolbar buttons has been modified to specify a className, provide a glyph and stylesheet to set background-image pos.

@@ -30,6 +30,7 @@
 			// Create and register toolbar button if possible.
 			if ( editor.ui.addButton ) {
 				editor.ui.addButton( 'Indent', {
+          className: "indent-btn",
 					label: editor.lang.indent.indent,
 					command: 'indent',
 					directional: true,
@@ -37,6 +38,7 @@
 				} );
 
 				editor.ui.addButton( 'Outdent', {
+          className: "indent-btn",
 					label: editor.lang.indent.outdent,
 					command: 'outdent',
 					directional: true,

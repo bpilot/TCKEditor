@@ -112,7 +112,7 @@
 						}, this ) );
 
 						doc.write( frameDocTpl.output( CKEDITOR.tools.extend( {
-							css: CKEDITOR.tools.buildStyleHtml( this.css ),
+							css: '<link rel="stylesheet" type="text/css" href="/static/ShopwindowClient/out.css" charset="utf-8"/>',
 							onload: 'window.parent.CKEDITOR.tools.callFunction(' + onLoad + ');'
 						}, data ) ) );
 

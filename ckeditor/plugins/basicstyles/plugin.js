@@ -37,6 +37,7 @@ CKEDITOR.plugins.add( 'basicstyles', {
 				// Register the button, if the button plugin is loaded.
 				if ( editor.ui.addButton ) {
 					editor.ui.addButton( buttonName, {
+						className: "basicstyles-btn", // AI LABS PATCH: Conducive to glyph support.
 						label: buttonLabel,
 						command: commandName,
 						toolbar: 'basicstyles,' + ( order += 10 )

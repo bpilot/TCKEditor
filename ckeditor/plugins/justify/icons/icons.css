@@ -1,0 +1,10 @@
+
+a.cke_button.justify-btn span
+{
+  background-image: url(glyph.png);
+}
+
+span.cke_button__justifyblock_icon { background-position:0 0px; }
+span.cke_button__justifycenter_icon { background-position:0 -16px; }
+span.cke_button__justifyleft_icon { background-position:0 -32px; }
+span.cke_button__justifyright_icon { background-position:0 -48px; }

@@ -1,0 +1,8 @@
+
+a.cke_button.indent-btn span
+{
+  background-image: url(glyph.png);
+}
+
+span.cke_button__indent_icon { background-position:0 0px; }
+span.cke_button__outdent_icon { background-position:0 -16px; }

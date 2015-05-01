@@ -30,7 +30,7 @@
 		' onfocus="return CKEDITOR.tools.callFunction({focusFn},event);" ' +
 		( CKEDITOR.env.ie ? 'onclick="return false;" onmouseup' : 'onclick' ) + // #188
 			'="CKEDITOR.tools.callFunction({clickFn},this);return false;">' +
-		'<span class="cke_button_icon cke_button__{iconName}_icon" style="{style}"';
+		'<span class="cke_button_icon cke_button__{iconName}_icon"';
 
 
 	template += '>&nbsp;</span>' +
@@ -234,8 +234,6 @@
 					else
 						el.removeClass( 'cke_ltr' ).removeClass( 'cke_rtl' );
 
-					// Inline style update for the plugin icon.
-					icon.setAttribute( 'style', CKEDITOR.skin.getIconStyle( iconName, pathDir == 'rtl', this.icon, this.iconOffset ) );
 				}, this );
 			}
 
@@ -256,7 +254,7 @@
 				name: name,
 				iconName: iconName,
 				label: this.label,
-				cls: this.className || '',
+				cls: this.className,
 				state: stateName,
 				ariaDisabled: stateName == 'disabled' ? 'true' : 'false',
 				title: this.title,
@@ -265,7 +263,6 @@
 				keydownFn: keydownFn,
 				focusFn: focusFn,
 				clickFn: clickFn,
-				style: CKEDITOR.skin.getIconStyle( iconName, ( editor.lang.dir == 'rtl' ), this.icon, this.iconOffset ),
 				arrowHtml: this.hasArrow ? btnArrowTpl.output() : ''
 			};
 

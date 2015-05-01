@@ -205,21 +205,25 @@
 
 			if ( editor.ui.addButton ) {
 				editor.ui.addButton( 'JustifyLeft', {
+          className: "justify-btn", // AI LABS PATCH
 					label: editor.lang.justify.left,
 					command: 'justifyleft',
 					toolbar: 'align,10'
 				} );
 				editor.ui.addButton( 'JustifyCenter', {
+          className: "justify-btn", // AI LABS PATCH
 					label: editor.lang.justify.center,
 					command: 'justifycenter',
 					toolbar: 'align,20'
 				} );
 				editor.ui.addButton( 'JustifyRight', {
+          className: "justify-btn", // AI LABS PATCH
 					label: editor.lang.justify.right,
 					command: 'justifyright',
 					toolbar: 'align,30'
 				} );
 				editor.ui.addButton( 'JustifyBlock', {
+          className: "justify-btn", // AI LABS PATCH
 					label: editor.lang.justify.block,
 					command: 'justifyblock',
 					toolbar: 'align,40'

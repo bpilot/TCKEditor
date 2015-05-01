@@ -29,6 +29,7 @@ CKEDITOR.plugins.add( 'colorbutton', {
 				colorBoxId = CKEDITOR.tools.getNextId() + '_colorBox';
 
 			editor.ui.add( name, CKEDITOR.UI_PANELBUTTON, {
+        className: "colorbutton-btn",
 				label: title,
 				title: title,
 				modes: { wysiwyg: 1 },
