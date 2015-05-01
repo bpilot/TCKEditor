@@ -34,3 +34,6 @@ if ( !CKEDITOR.editor ) {
 	// "Inherit" (copy actually) from CKEDITOR.event.
 	CKEDITOR.event.implementOn( CKEDITOR.editor.prototype );
 }
+
+// EXPORT (AI LABS)
+module.exports = CKEDITOR.editor;

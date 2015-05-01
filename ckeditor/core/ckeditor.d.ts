@@ -847,6 +847,8 @@ declare module CkEditor {
         setUiColor(color: string): void;
         unlockSelection(restore?: boolean): void;
         updateElement(): void;
+        // AI LABS EXTENSION
+        contentHeight(): number;
     }
 
 
