@@ -99,12 +99,14 @@
 
 			if ( editor.ui.addButton ) {
 				editor.ui.addButton( 'Undo', {
+          className: "undo-btn", // AI LABS PATCH
 					label: editor.lang.undo.undo,
 					command: 'undo',
 					toolbar: 'undo,10'
 				} );
 
 				editor.ui.addButton( 'Redo', {
+          className: "undo-btn", // AI LABS PATCH
 					label: editor.lang.undo.redo,
 					command: 'redo',
 					toolbar: 'undo,20'

@@ -7,7 +7,7 @@ import default_skin = require('/Libraries/TCKEditor/ckeditor/skins/moono/skin');
 import ck_styles = require('/Libraries/TCKEditor/ckeditor/styles');
 
 // AI LABS extensions to Editor
-import ailabs_editor_addons = require('/Libraries/TCKEditor/ailabs-editor-addons');
+import ailabs_editor_addons = require('/Libraries/TCKEditor/ailabs/editor-addons');
 
 // Import plugins
 import DEFAULT_PLUGINS = require('/Libraries/TCKEditor/DEFAULT_PLUGINS');

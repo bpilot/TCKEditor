@@ -6,6 +6,7 @@
               {"name": "/Libraries/TCKEditor/ckeditor/core/htmlparser/basicwriter", "local": "htmlparser_basicwriter"},
               {"name": "/Libraries/TCKEditor/ckeditor/core/htmlparser/fragment", "local": "htmlparser_fragment"},
               {"name": "/Libraries/TCKEditor/ckeditor/core/htmlparser/node", "local": "htmlparser_node"},
+              {"name": "/Libraries/TCKEditor/ckeditor/core/htmlparser/text", "local": "htmlparser_text"},
               {"name": "/Libraries/TCKEditor/ckeditor/core/htmlparser/element", "local": "htmlparser_element"},
               {"name": "/Libraries/TCKEditor/ckeditor/core/htmlparser/filter", "local": "htmlparser_filter"}]
 }
