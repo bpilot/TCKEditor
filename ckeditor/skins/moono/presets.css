@@ -35,3 +35,10 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 {
 	background-color: #fff;
 }
+
+/* AI LABS PATCH: Comboboxes scroll vertically */
+div.cke_combopanel
+{
+  overflow-y: auto;
+}
+

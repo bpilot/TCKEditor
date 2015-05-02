@@ -3,6 +3,8 @@
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
+// AI LABS PATCHED: Remove iframes. This module heavily modified.
+
 ( function() {
 	CKEDITOR.plugins.add( 'panel', {
 		beforeInit: function( editor ) {
@@ -38,7 +40,7 @@
 
 		this.id = CKEDITOR.tools.getNextId();
 		this.document = document;
-		this.isFramed = this.forceIFrame || this.css.length;
+    this.isLoaded = true; // Immediately loaded. AI LABS PATCH
 
 		this._ = {
 			blocks: {}
@@ -64,20 +66,12 @@
 		}
 	};
 
-	var panelTpl = CKEDITOR.addTemplate( 'panel', '<div lang="{langCode}" id="{id}" dir={dir}' +
+	var panelTpl = CKEDITOR.addTemplate( 'panel',
+    '<div lang="{langCode}" id="{id}" dir={dir}' +
 		' class="cke cke_reset_all {editorId} cke_panel cke_panel {cls} cke_{dir}"' +
-		' style="z-index:{z-index}" role="presentation">' +
+		' style="z-index:{z-index}" role="presentation">' + // AI LABS PATCH: Overflow scroll because we have no iframe
 		'{frame}' +
 		'</div>' );
-
-	var frameTpl = CKEDITOR.addTemplate( 'panel-frame', '<iframe id="{id}" class="cke_panel_frame" role="presentation" frameborder="0" src="{src}"></iframe>' );
-
-	var frameDocTpl = CKEDITOR.addTemplate( 'panel-frame-inner', '<!DOCTYPE html>' +
-		'<html class="cke_panel_container {env}" dir="{dir}" lang="{langCode}">' +
-			'<head>{css}</head>' +
-			'<body class="cke_{dir}"' +
-				' style="margin:0;padding:0" onload="{onload}"></body>' +
-		'<\/html>' );
 
 	/** @class CKEDITOR.ui.panel */
 	CKEDITOR.ui.panel.prototype = {
@@ -93,61 +87,8 @@
 			this.getHolderElement = function() {
 				var holder = this._.holder;
 
-				if ( !holder ) {
-					if ( this.isFramed ) {
-						var iframe = this.document.getById( this.id + '_frame' ),
-							parentDiv = iframe.getParent(),
-							doc = iframe.getFrameDocument();
-
-						// Make it scrollable on iOS. (#8308)
-						CKEDITOR.env.iOS && parentDiv.setStyles( {
-							'overflow': 'scroll',
-							'-webkit-overflow-scrolling': 'touch'
-						} );
-
-						var onLoad = CKEDITOR.tools.addFunction( CKEDITOR.tools.bind( function() {
-							this.isLoaded = true;
-							if ( this.onLoad )
-								this.onLoad();
-						}, this ) );
-
-						doc.write( frameDocTpl.output( CKEDITOR.tools.extend( {
-							css: '<link rel="stylesheet" type="text/css" href="/static/ShopwindowClient/out.css" charset="utf-8"/>',
-							onload: 'window.parent.CKEDITOR.tools.callFunction(' + onLoad + ');'
-						}, data ) ) );
-
-						var win = doc.getWindow();
-
-						// Register the CKEDITOR global.
-						win.$.CKEDITOR = CKEDITOR;
-
-						// Arrow keys for scrolling is only preventable with 'keypress' event in Opera (#4534).
-						doc.on( 'keydown', function( evt ) {
-							var keystroke = evt.data.getKeystroke(),
-								dir = this.document.getById( this.id ).getAttribute( 'dir' );
-
-							// Delegate key processing to block.
-							if ( this._.onKeyDown && this._.onKeyDown( keystroke ) === false ) {
-								evt.data.preventDefault();
-								return;
-							}
-
-							// ESC/ARROW-LEFT(ltr) OR ARROW-RIGHT(rtl)
-							if ( keystroke == 27 || keystroke == ( dir == 'rtl' ? 39 : 37 ) ) {
-								if ( this.onEscape && this.onEscape( keystroke ) === false )
-									evt.data.preventDefault();
-							}
-						}, this );
-
-						holder = doc.getBody();
-						holder.unselectable();
-						CKEDITOR.env.air && CKEDITOR.tools.callFunction( onLoad );
-					} else {
-						holder = this.document.getById( this.id );
-					}
-
-					this._.holder = holder;
-				}
+        holder = this.document.getById( this.id );
+        this._.holder = holder;
 
 				return holder;
 			};
@@ -158,30 +99,11 @@
 				langCode: editor.langCode,
 				dir: editor.lang.dir,
 				cls: this.className,
-				frame: '',
+        frame: '',
+        overflow_y: this.scroll_y ? 'auto' : 'hidden', // AI LABS PATCH
 				env: CKEDITOR.env.cssClass,
 				'z-index': editor.config.baseFloatZIndex + 1
 			};
-
-			if ( this.isFramed ) {
-				// With IE, the custom domain has to be taken care at first,
-				// for other browers, the 'src' attribute should be left empty to
-				// trigger iframe's 'load' event.
-				var src =
-					CKEDITOR.env.air ? 'javascript:void(0)' : // jshint ignore:line
-					CKEDITOR.env.ie ? 'javascript:void(function(){' + encodeURIComponent( // jshint ignore:line
-						'document.open();' +
-						// In IE, the document domain must be set any time we call document.open().
-						'(' + CKEDITOR.tools.fixDomain + ')();' +
-						'document.close();'
-					) + '}())' :
-					'';
-
-				data.frame = frameTpl.output( {
-					id: this.id + '_frame',
-					src: src
-				} );
-			}
 
 			var html = panelTpl.output( data );
 
@@ -220,7 +142,7 @@
 
 			// ARIA role works better in IE on the body element, while on the iframe
 			// for FF. (#8864)
-			var holder = !this.forceIFrame || CKEDITOR.env.ie ? this._.holder : this.document.getById( this.id + '_frame' );
+			var holder = this._.holder;
 
 			if ( current )
 				current.hide();

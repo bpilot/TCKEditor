@@ -204,26 +204,7 @@
 		if ( CKEDITOR.env.ie && CKEDITOR.env.quirks )
 			return;
 
-		var editor = evt.editor,
-			showCallback = function( event ) {
-				var panel = event.data[ 0 ] || event.data;
-				var iframe = panel.element.getElementsByTag( 'iframe' ).getItem( 0 ).getFrameDocument();
-
-				// Add stylesheet if missing.
-				if ( !iframe.getById( 'cke_ui_color' ) ) {
-					var node = getStylesheet( iframe );
-					uiColorMenus.push( node );
-
-					var color = editor.getUiColor();
-					// Set uiColor for new panel.
-					if ( color )
-						updateStylesheets( [ node ], CKEDITOR.skin.chameleon( editor, 'panel' ), [ [ uiColorRegexp, color ] ] );
-
-				}
-			};
-
-		editor.on( 'panelShow', showCallback );
-		editor.on( 'menuShow', showCallback );
+		var editor = evt.editor;
 
 		// Apply UI color if specified in config.
 		if ( editor.config.uiColor )
