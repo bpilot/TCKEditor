@@ -3,7 +3,7 @@ Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
 For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 
-body
+.tckeditor-content
 {
 	/* Font */
 	font-family: sans-serif, Arial, Verdana, "Trebuchet MS";
@@ -15,16 +15,20 @@ body
 	/* Remove the background color to make it transparent */
 	background-color: #fff;
 
-	margin: 20px;
+	padding: 10px;
+  box-sizing: border-box;
+  outline: 0;
+
+  word-wrap: break-word;
 }
 
-.cke_editable
+.tckeditor-content
 {
 	font-size: 13px;
-	line-height: 1.6;
+	line-height: 1.2;
 }
 
-blockquote
+.tckeditor-content blockquote
 {
 	font-style: italic;
 	font-family: Georgia, Times, "Times New Roman", serif;
@@ -48,12 +52,14 @@ blockquote
 	border-right-width: 5px;
 }
 
-a
+.tckeditor-content a
 {
-	color: #0782C1;
+  color: #0782C1;
 }
 
-ol,ul,dl
+.tckeditor-content ol,
+.tckeditor-content ul,
+.tckeditor-content dl
 {
 	/* IE7: reset rtl list margin. (#7334) */
 	*margin-right: 0px;
@@ -61,19 +67,32 @@ ol,ul,dl
 	padding: 0 40px;
 }
 
-h1,h2,h3,h4,h5,h6
+.tckeditor-content li { line-height: inherit; }
+
+
+.tckeditor-content h1,
+.tckeditor-content h2,
+.tckeditor-content h3,
+.tckeditor-content h4,
+.tckeditor-content h5,
+.tckeditor-content h6
 {
 	font-weight: normal;
 	line-height: 1.2;
 }
+.cke h1, .tckeditor-content h1 { font-size: 26px; }
+.cke h2, .tckeditor-content h2 { font-size: 22px; }
+.cke h3, .tckeditor-content h3 { font-size: 18px; }
+.cke h4, .tckeditor-content h4 { font-size: 17px; }
 
-hr
+
+.tckeditor-content hr
 {
 	border: 0px;
 	border-top: 1px solid #ccc;
 }
 
-img.right
+.tckeditor-content img.right
 {
 	border: 1px solid #ccc;
 	float: right;
@@ -81,7 +100,7 @@ img.right
 	padding: 5px;
 }
 
-img.left
+.tckeditor-content img.left
 {
 	border: 1px solid #ccc;
 	float: left;
@@ -89,7 +108,7 @@ img.left
 	padding: 5px;
 }
 
-pre
+.tckeditor-content pre
 {
 	white-space: pre-wrap; /* CSS 2.1 */
 	word-wrap: break-word; /* IE7 */
@@ -99,17 +118,17 @@ pre
 	tab-size: 4;
 }
 
-.marker
+.tckeditor-content .marker
 {
 	background-color: Yellow;
 }
 
-span[lang]
+.tckeditor-contentspan[lang]
 {
 	font-style: italic;
 }
 
-figure
+.tckeditor-content figure
 {
 	text-align: center;
 	border: solid 1px #ccc;
@@ -120,13 +139,13 @@ figure
 	display: inline-block;
 }
 
-figure > figcaption
+.tckeditor-content figure > figcaption
 {
 	text-align: center;
 	display: block; /* For IE8 */
 }
 
-a > img {
+.tckeditor-content a > img {
 	padding: 1px;
 	margin: 1px;
 	border: none;

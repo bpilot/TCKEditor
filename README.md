@@ -13,3 +13,10 @@ DIFFERENCES FROM AI LABS BASE:
    Instead, plugins should use a stylesheet and glyph to apply icon style.
 
 Each plugin with toolbar buttons has been modified to specify a className, provide a glyph and stylesheet to set background-image pos.
+
+NO:
+2) There is no CKEDITOR global.
+
+3) Consequently, onclick handlers have been replaced with event delegation with data-cmd-click.
+
+

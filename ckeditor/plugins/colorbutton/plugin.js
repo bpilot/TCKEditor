@@ -92,8 +92,6 @@ CKEDITOR.plugins.add( 'colorbutton', {
 					if ( !color || color == 'transparent' )
 						color = '#ffffff';
 
-					this._.panel._.iframe.getFrameDocument().getById( colorBoxId ).setStyle( 'background-color', color );
-
 					return color;
 				}
 			} );

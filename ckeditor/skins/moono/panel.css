@@ -212,7 +212,7 @@ is its visual representation:
 .cke_panel_grouptitle
 {
 	cursor: default;
-	font-size: 11px;
+	font-size: 11px !important;
 	font-weight: bold;
 	white-space: nowrap;
 	margin: 0;

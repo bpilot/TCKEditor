@@ -312,7 +312,7 @@ CKEDITOR.plugins.add( 'menu', {
 					panel.onShow = function() {
 						// Menu need CSS resets, compensate class name.
 						var holder = panel._.panel.getHolderElement();
-						holder.getParent().addClass( 'cke cke_reset_all' );
+						holder.getParent().addClass( 'cke' );
 					};
 
 					panel.onHide = CKEDITOR.tools.bind( function() {
@@ -493,7 +493,6 @@ CKEDITOR.plugins.add( 'menu', {
 					moveOutFn: menu._.itemOutFn,
 					clickFn: menu._.itemClickFn,
 					index: index,
-					iconStyle: CKEDITOR.skin.getIconStyle( iconName, ( this.editor.lang.dir == 'rtl' ), iconName == this.icon ? null : this.icon, this.iconOffset ),
 					arrowHtml: hasSubMenu ? menuArrowTpl.output( { label: arrowLabel } ) : '',
 					role: this.role ? this.role : 'menuitem',
 					ariaChecked: ariaChecked
