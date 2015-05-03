@@ -1,0 +1,4 @@
+{
+  "imports": [{"name": "/Libraries/TCKEditor/ailabs/plugins/image2/dialogs/image2", "local": "image2_dialog"}],
+  "stylesheets": ["icons/icons.css", "dialogs/ailabs-upload-cont.css"]
+}

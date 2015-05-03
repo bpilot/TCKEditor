@@ -1,0 +1,21 @@
+div.ck-ailabs-upload-cont
+{
+  border: 2px dashed #ccc;
+  color: #777;
+  font-weight: 400;
+  text-align: center;
+  padding: 10px 0;
+}
+
+div.ck-ailabs-upload-cont
+{
+  height: 128px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(upload-icon.png);
+}
+
+div.ck-ailabs-upload-cont.dragover
+{
+	zoom: 1.30;
+}

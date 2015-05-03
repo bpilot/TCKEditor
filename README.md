@@ -21,4 +21,6 @@ NO:
 
 3) Consequently, onclick handlers have been replaced with event delegation with data-cmd-click.
 
+How to build widgets:
+http://docs.ckeditor.com/#!/guide/widget_sdk_tutorial_1
 

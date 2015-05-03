@@ -1,3 +1,11 @@
+import CKEDITOR = require('/Libraries/TCKEditor/ckeditor/core/ckeditor_base');
+
+import MediaReceiver = require('/Libraries/Michigan/Michigan1/lib/PhotoServiceClient/MediaReceiver');
+import NgUtil = require('/Libraries/Common/angular/util/NgUtil');
+import NgMediaUploader = require('/Libraries/Michigan/Michigan1/lib/PhotoServiceClient/MediaUploader');
+
+var MediaUploader = NgUtil.serviceAccessorFactory('media-uploader')('$mediaUploader');
+
 /**
  * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
@@ -7,9 +15,16 @@
  * @fileOverview Image plugin based on Widgets API
  */
 
-'use strict';
-
 CKEDITOR.dialog.add( 'image2', function( editor ) {
+
+
+  // BEGIN AI LABS PATCH
+  var upload_cont_id = CKEDITOR.tools.getNextId();
+  var  AILABS_UPLOAD_TEMPLATE =
+  '<div class="ck-ailabs-upload-cont" id="' + upload_cont_id + '">' +
+  '<strong>Drop Image</strong><br>&#40;<span>or click</span>&#41;' +
+  '</div>';
+
 
 	// RegExp: 123, 123px, empty string ""
 	var regexGetSizeOrEmpty = /(^\s*(\d+)(px)?\s*$)|^$/i,
@@ -252,7 +267,7 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 		if ( lockButton ) {
 			// Consider that there's an additional focusable field
 			// in the dialog when the "browse" button is visible.
-			dialog.addFocusable( lockButton, 4 + hasFileBrowser );
+			dialog.addFocusable( lockButton, 4 + (hasFileBrowser ? 1 : 0 ) );
 
 			lockButton.on( 'click', function( evt ) {
 				toggleLockRatio();
@@ -266,7 +281,7 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 		if ( resetButton ) {
 			// Consider that there's an additional focusable field
 			// in the dialog when the "browse" button is visible.
-			dialog.addFocusable( resetButton, 5 + hasFileBrowser );
+			dialog.addFocusable( resetButton, 5 + (hasFileBrowser ? 1 : 0) );
 
 			// Fills width and height fields with the original dimensions of the
 			// image (stored in widget#data since widget#init).
@@ -292,7 +307,7 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 		}
 	}
 
-	function toggleLockRatio( enable ) {
+	function toggleLockRatio( enable?: boolean ) {
 		// No locking if there's no radio (i.e. due to ACF).
 		if ( !lockButton )
 			return;
@@ -359,21 +374,6 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 			}
 		];
 
-	// Render the "Browse" button on demand to avoid an "empty" (hidden child)
-	// space in dialog layout that distorts the UI.
-	if ( hasFileBrowser ) {
-		srcBoxChildren.push( {
-			type: 'button',
-			id: 'browse',
-			// v-align with the 'txtUrl' field.
-			// TODO: We need something better than a fixed size here.
-			style: 'display:inline-block;margin-top:14px;',
-			align: 'center',
-			label: editor.lang.common.browseServer,
-			hidden: true,
-			filebrowser: 'info:src'
-		} );
-	}
 
 	return {
 		title: lang.title,
@@ -421,6 +421,38 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 							}
 						]
 					},
+          // AI LABS PATCH: Uploader -- BEGIN
+					{
+						id: 'ailabs-upload-media',
+						type: 'html',
+            onLoad: function()
+            {
+              var dialog_contents = this._.dialog.parts.contents.$;
+              var src_input = dialog_contents.querySelector('input.cke_dialog_ui_input_text');
+
+              function upload_complete_callback(result)
+              {
+                src_input.value = result.link; // Set value of src input field for user!
+              }
+
+              var upload_cont = document.getElementById(upload_cont_id);
+              var mediaReceiver = new MediaReceiver(upload_cont, {dragoverClass: 'dragover'});
+              mediaReceiver.acceptMedia('photo', function(data)
+              {
+                MediaUploader.uploadBase64(data)
+                .then(upload_complete_callback);
+              });
+
+              // Upload from desktop
+              upload_cont.addEventListener("click", function()
+              {
+                MediaUploader.uploadFromDesktop()
+                .submit(upload_complete_callback);
+              });
+            },
+            html: AILABS_UPLOAD_TEMPLATE
+					},
+          // AI LABS PATCH: Uploader -- END
 					{
 						id: 'alt',
 						type: 'text',
@@ -521,27 +553,6 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 						commit: function( widget ) {
 							widget.setData( 'hasCaption', this.getValue() );
 						}
-					}
-				]
-			},
-			{
-				id: 'Upload',
-				hidden: true,
-				filebrowser: 'uploadButton',
-				label: lang.uploadTab,
-				elements: [
-					{
-						type: 'file',
-						id: 'upload',
-						label: lang.btnUpload,
-						style: 'height:40px'
-					},
-					{
-						type: 'fileButton',
-						id: 'uploadButton',
-						filebrowser: 'info:src',
-						label: lang.btnUpload,
-						'for': [ 'Upload', 'upload' ]
 					}
 				]
 			}
