@@ -1,0 +1,9 @@
+
+a.clipboard-btn span.cke_button_icon
+{
+  background-image: url(glyph.png);
+}
+
+a.clipboard-btn span.cke_button__copy_icon { background-position:0 0px; }
+a.clipboard-btn span.cke_button__cut_icon { background-position:0 -16px; }
+a.clipboard-btn span.cke_button__paste_icon { background-position:0 -32px; }

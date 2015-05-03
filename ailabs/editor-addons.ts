@@ -14,5 +14,5 @@ EditorBase.prototype.contentHeight = function(): number
 
   if (first_child == last_child) { return first_child.offsetHeight; } // Account for one element.
 
-  return (last_child.offsetTop + last_child.offsetHeight) - (first_child.offsetTop - first_child.offsetHeight);
+  return (last_child.offsetTop + last_child.offsetHeight) - first_child.offsetTop;
 };

@@ -187,6 +187,67 @@ CKEDITOR.plugins.add( 'floatpanel', {
 				// Report to focus manager.
 				this._.editor.focusManager.add( focused );
 
+        // Configure the IFrame blur event. Do that only once.
+        // AI LABS PATCH: Change to do focus on div with tabindex set. -- NO iframe!
+				if ( !this._.blurSet )
+				{
+					// With addEventListener compatible browsers, we must
+					// useCapture when registering the focus/blur events to
+					// guarantee they will be firing in all situations. (#3068, #3222 )
+					CKEDITOR.event.useCapture = true;
+
+					focused.on('blur', function( ev ) {
+						// As we are using capture to register the listener,
+						// the blur event may get fired even when focusing
+						// inside the window itself, so we must ensure the
+						// target is out of it.
+						if ( !this.allowBlur() || ev.data.getPhase() != CKEDITOR.EVENT_PHASE_AT_TARGET ) { return; }
+
+						if ( this.visible && !this._.activeChild ) {
+						// [iOS] Allow hide to be prevented if touch is bound
+						// to any parent of the iframe blur happens before touch (#10714).
+						  if ( !this._.hideTimeout )
+              {
+                this._.hideTimeout = CKEDITOR.tools.setTimeout( doHide, 200, this );
+						  }
+						}
+
+						function doHide() {
+							// Panel close is caused by user's navigating away the focus, e.g. click outside the panel.
+							// DO NOT restore focus in this case.
+							delete this._.returnFocus;
+							this.hide();
+						}
+					}, this );
+
+					focused.on( 'focus', function() {
+						this._.focused = true;
+						this.hideChild();
+					}, this );
+
+					// [iOS] if touch is bound to any parent of the iframe blur
+					// happens twice before touchstart and before touchend (#10714).
+					if ( CKEDITOR.env.iOS ) {
+						// Prevent false hiding on blur.
+						// We don't need to return focus here because touchend will fire anyway.
+						// If user scrolls and pointer gets out of the panel area touchend will also fire.
+						focused.on( 'touchstart', function() {
+							clearTimeout( this._.hideTimeout );
+						}, this );
+
+						// Set focus back to handle blur and hide panel when needed.
+						focused.on( 'touchend', function() {
+							this._.hideTimeout = 0;
+							this.focus();
+						}, this );
+					}
+
+					CKEDITOR.event.useCapture = false;
+
+					this._.blurSet = 1;
+				}
+
+
 				panel.onEscape = CKEDITOR.tools.bind( function( keystroke ) {
 					if ( this.onEscape && this.onEscape( keystroke ) === false )
 						return false;
@@ -329,8 +390,17 @@ CKEDITOR.plugins.add( 'floatpanel', {
 							CKEDITOR.document.getBody().$.scrollTop = scrollTop;
 
 						// We need this get fired manually because of unfired focus() function.
-						this.allowBlur( true );
+						
+						CKEDITOR.tools.setTimeout(function() // Wait for blur
+            {
+              this.allowBlur( true );
+              focused.focus();
+            }, 200, this);
+
 						this._.editor.fire( 'panelShow', this );
+
+            // AI LABS PATCH: Change to do focus on div with tabindex set.
+
 					}, 0, this );
 				}, CKEDITOR.env.air ? 200 : 0, this );
 				this.visible = 1;

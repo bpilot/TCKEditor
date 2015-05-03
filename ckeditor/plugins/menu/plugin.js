@@ -113,7 +113,7 @@ CKEDITOR.plugins.add( 'menu', {
 	menuItemSource +=
 				'<span class="cke_menubutton_inner">' +
 					'<span class="cke_menubutton_icon">' +
-						'<span class="cke_button_icon cke_button__{iconName}_icon" style="{iconStyle}"></span>' +
+						'<span class="cke_button_icon cke_button__{iconName}_icon"></span>' +
 					'</span>' +
 					'<span class="cke_menubutton_label">' +
 						'{label}' +
@@ -309,11 +309,7 @@ CKEDITOR.plugins.add( 'menu', {
 							return false;
 					}, this );
 
-					panel.onShow = function() {
-						// Menu need CSS resets, compensate class name.
-						var holder = panel._.panel.getHolderElement();
-						holder.getParent().addClass( 'cke' );
-					};
+          // AI LABS PATCH: Will not without iframe.
 
 					panel.onHide = CKEDITOR.tools.bind( function() {
 						this._.onHide && this._.onHide();
@@ -334,9 +330,6 @@ CKEDITOR.plugins.add( 'menu', {
 
 					element = this._.element = block.element;
 
-					var elementDoc = element.getDocument();
-					elementDoc.getBody().setStyle( 'overflow', 'hidden' );
-					elementDoc.getElementsByTag( 'html' ).getItem( 0 ).setStyle( 'overflow', 'hidden' );
 
 					this._.itemOverFn = CKEDITOR.tools.addFunction( function( index ) {
 						clearTimeout( this._.showSubTimeout );

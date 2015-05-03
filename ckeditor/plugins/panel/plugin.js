@@ -67,7 +67,7 @@
 	};
 
 	var panelTpl = CKEDITOR.addTemplate( 'panel',
-    '<div lang="{langCode}" id="{id}" dir={dir}' +
+    '<div lang="{langCode}" id="{id}" dir={dir} tabindex="-1"' + // AI LABS PATCH: Allow focus without iframe.
 		' class="cke cke_reset_all {editorId} cke_panel cke_panel {cls} cke_{dir}"' +
 		' style="z-index:{z-index}" role="presentation">' + // AI LABS PATCH: Overflow scroll because we have no iframe
 		'{frame}' +

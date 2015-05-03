@@ -355,6 +355,7 @@
 
 				editor.addCommand( commandName, command );
 				editor.ui.addButton && editor.ui.addButton( buttonName, {
+          className: "clipboard-btn",
 					label: lang,
 					command: commandName,
 					toolbar: 'clipboard,' + toolbarOrder
@@ -363,6 +364,7 @@
 				// If the "menu" plugin is loaded, register the menu item.
 				if ( editor.addMenuItems ) {
 					editor.addMenuItem( commandName, {
+            className: "clipboard-btn",
 						label: lang,
 						command: commandName,
 						group: 'clipboard',

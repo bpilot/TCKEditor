@@ -1,3 +1,4 @@
 {
+  "imports": [{"name": "/Libraries/TCKEditor/ckeditor/plugins/link/dialogs/link", "local": "link_dialog"}],
 	"stylesheets": ["icons/icons.css"]
 }

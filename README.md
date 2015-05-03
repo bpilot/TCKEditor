@@ -14,6 +14,8 @@ DIFFERENCES FROM AI LABS BASE:
 
 Each plugin with toolbar buttons has been modified to specify a className, provide a glyph and stylesheet to set background-image pos.
 
+2) We do not use iframes!
+
 NO:
 2) There is no CKEDITOR global.
 
