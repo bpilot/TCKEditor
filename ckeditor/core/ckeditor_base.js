@@ -35,7 +35,6 @@ if ( !window.CKEDITOR ) {
 			 *		alert( CKEDITOR.timestamp ); // e.g. '87dm'
 			 */
 
-      dom: {}, // Namespacer
 
 			timestamp: '87dm',
 			// The production implementation contains a fixed timestamp, unique

@@ -8,4 +8,6 @@
  *		manipulation objects and function.
  */
 
+CKEDITOR.dom = {};
 // PACKAGER_RENAME( CKEDITOR.dom )
+

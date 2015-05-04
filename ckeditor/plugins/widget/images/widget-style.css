@@ -1,7 +1,22 @@
 
 span.cke_image_resizer
 {
-  background: url(handle.png);
-  width: 15px;
-  height: 15px;
+  background-color: #000;
 }
+
+span.cke_widget_drag_handler_container
+{
+  background: url(handle.png);
+}
+
+span.cke_widget_drag_handler_container
+{
+  position: absolute;
+  width: 15px;
+  height: 0;
+  left: -9999px;
+  opacity: 0.75;
+  transition: height 0s 0.2s;
+  line-height: 0;
+}
+

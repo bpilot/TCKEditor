@@ -2903,9 +2903,7 @@
 		else {
 			container = new CKEDITOR.dom.element( 'span', editor.document );
 			container.setAttributes( {
-				'class': 'cke_reset cke_widget_drag_handler_container',
-				// Split background and background-image for IE8 which will break on rgba().
-				style: 'background:rgba(220,220,220,0.5);background-image:url(' + editor.plugins.widget.path + 'images/handle.png)'
+				'class': 'cke_reset cke_widget_drag_handler_container'
 			} );
 
 			img = new CKEDITOR.dom.element( 'img', editor.document );

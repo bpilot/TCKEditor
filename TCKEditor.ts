@@ -1,9 +1,9 @@
 // Import modules
-import CKEditor = require('/Libraries/TCKEditor/ckeditor/core/ckeditor');
+import CKEditor = require('/Libraries/TCKEditor/ckeditor/core/CKEDITOR_BOOTSTRAPPER');
 import ck_editable = require('/Libraries/TCKEditor/ckeditor/core/editable');
 
-import lang_en = require('/Libraries/TCKEditor/ckeditor/lang/en');
 import default_skin = require('/Libraries/TCKEditor/ckeditor/skins/moono/skin');
+import lang_en = require('/Libraries/TCKEditor/ckeditor/lang/en');
 import ck_styles = require('/Libraries/TCKEditor/ckeditor/styles');
 
 // AI LABS extensions to Editor

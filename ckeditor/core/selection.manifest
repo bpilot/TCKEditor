@@ -1,6 +1,0 @@
-{
-  "imports": [{"name": "/Libraries/TCKEditor/ckeditor/core/ckeditor_base", "local": "CKEDITOR"},
-              {"name": "/Libraries/TCKEditor/ckeditor/core/dom/walker", "local": "dom_walker"},
-              {"name": "/Libraries/TCKEditor/ckeditor/core/dom/range", "local": "dom_range"},
-              {"name": "/Libraries/TCKEditor/ckeditor/core/editor_basic", "local": "editor_basic"}]
-}

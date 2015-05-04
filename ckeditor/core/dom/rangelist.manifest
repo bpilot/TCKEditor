@@ -1,3 +1,0 @@
-{
-  "imports": [{"name": "/Libraries/TCKEditor/ckeditor/core/ckeditor_base", "local": "CKEDITOR"}]
-}
