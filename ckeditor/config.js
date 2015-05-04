@@ -15,7 +15,7 @@ CKEDITOR.editorConfig = function( config ) {
 		'bidi,' +
 		'blockquote,' +
 		'clipboard,' +
-		'colorbutton,' +
+		'colorbutton2,' +
 		'colordialog,' +
 		'contextmenu,' +
 		'dialogadvtab,' +

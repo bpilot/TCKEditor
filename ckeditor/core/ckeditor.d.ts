@@ -573,6 +573,10 @@ declare module CkEditor {
         colorButton_colors?: string;
         startupFocus?: boolean;
         on?: any;
+
+        colorButton_foreStyle?: any;
+        colorButton_backStyle?: any;
+        allowedContent?: boolean;
     }
 
 
@@ -1126,6 +1130,8 @@ declare module CkEditor {
         function isTabEnabled(editor: editor, dialogName: string, tabName: string): boolean;
         function okButton(): void;
     }
+
+  var style: any;
 }
 
 export = CkEditor;

@@ -4,5 +4,6 @@ a.cke_button.undo-btn span
   background-image: url(glyph.png);
 }
 
-span.cke_button__redo_icon { background-position:0 -16px; }
-span.cke_button__undo_icon { background-position:0 0px; }
+span.cke_button__redo_icon { background-position:0 0px; }
+span.cke_button__undo_icon { background-position:0 -16px; }
+
