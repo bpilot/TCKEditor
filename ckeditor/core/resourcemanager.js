@@ -206,23 +206,13 @@ CKEDITOR.resourceManager.prototype = {
 			}
 		}
 
-		CKEDITOR.scriptLoader.load( urls, function( completed, failed ) {
-			if ( failed.length ) {
-				throw '[CKEDITOR.resourceManager.load] Resource name "' + urlsNames[ failed[ 0 ] ].join( ',' ) +
-					'" was not found at "' + failed[ 0 ] + '".';
-			}
-
-			for ( var i = 0; i < completed.length; i++ ) {
-				var nameList = urlsNames[ completed[ i ] ];
-				for ( var j = 0; j < nameList.length; j++ ) {
-					var name = nameList[ j ];
-					resources[ name ] = this.get( name );
-
-					loaded[ name ] = 1;
-				}
-			}
-
-			callback.call( scope, resources );
-		}, this );
+    callback.call(scope, resources); // AI LABS PATCH: No script loader.
 	}
+};
+
+
+CKEDITOR.scriptLoader =
+{
+  // Immediately ready, AI LABS PATCH
+  load: function(src, callback) { callback(); } // Loaded already!
 };

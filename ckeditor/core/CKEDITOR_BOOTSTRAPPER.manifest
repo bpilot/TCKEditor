@@ -24,7 +24,6 @@
               {"name": "/Libraries/TCKEditor/ckeditor/core/focusmanager", "local": "core_focusmanager"},
               {"name": "/Libraries/TCKEditor/ckeditor/core/keystrokehandler", "local": "core_keystrokehandler"},
               {"name": "/Libraries/TCKEditor/ckeditor/core/lang", "local": "core_lang"},
-              {"name": "/Libraries/TCKEditor/ckeditor/core/scriptloader", "local": "core_scriptloader"},
               {"name": "/Libraries/TCKEditor/ckeditor/core/resourcemanager", "local": "core_resourcemanger"},
               {"name": "/Libraries/TCKEditor/ckeditor/core/plugins", "local": "core_plugins"},
               {"name": "/Libraries/TCKEditor/ckeditor/core/ui", "local": "core_ui"},
