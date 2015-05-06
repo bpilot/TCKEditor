@@ -572,8 +572,7 @@
 	function initLine( that ) {
 		var doc = that.doc,
 			// This the main box element that holds triangles and the insertion button
-			line = newElementFromHtml( '<span contenteditable="false" style="' + CSS_COMMON + 'position:absolute;border-top:1px dashed ' + that.boxColor + '"></span>', doc ),
-			iconPath = CKEDITOR.getUrl( this.path + 'images/' + ( env.hidpi ? 'hidpi/' : '' ) + 'icon' + ( that.rtl ? '-rtl' : '' ) + '.png' );
+			line = newElementFromHtml( '<span contenteditable="false" style="' + CSS_COMMON + 'position:absolute;border-top:1px dashed ' + that.boxColor + '"></span>', doc );
 
 		extend( line, {
 
@@ -590,10 +589,10 @@
 				extend(
 					newElementFromHtml(
 						'<span title="' + that.editor.lang.magicline.title +
-						'" contenteditable="false">&#8629;</span>', doc
+						'" contenteditable="false" class="magicline-newpara-icon">&#8629;</span>', doc
 					), {
 						base: CSS_COMMON + 'height:17px;width:17px;' + ( that.rtl ? 'left' : 'right' ) + ':17px;' +
-								'background:url(' + iconPath + ') center no-repeat ' + that.boxColor + ';cursor:pointer;' +
+								'background-color: ' + that.boxColor + ';cursor:pointer;' +
 								( env.hc ? 'font-size: 15px;line-height:14px;border:1px solid #fff;text-align:center;' : '' ) +
 								( env.hidpi ? 'background-size: 9px 10px;' : '' ),
 						looks: [

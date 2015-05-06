@@ -6,6 +6,7 @@
 CKEDITOR.editorConfig = function( config ) {
 
   config.floatSpacePinnedOffsetY = 30;
+  config.format_tags = 'p;h1;h2;h3';
 
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';
