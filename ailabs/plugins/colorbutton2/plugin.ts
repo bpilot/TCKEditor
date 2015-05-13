@@ -2,7 +2,7 @@
 import CuratedColorPicker = require('/Libraries/Michigan/Michigan1/widgets/CuratedColorPicker');
 import AngularExternal = require('/Libraries/Michigan/Michigan2/lib/angular-objectoriented/AngularExternal');
 
-var colorDialog = AngularExternal.dialog(CuratedColorPicker, {title: 'Froala was a Fag'});
+var colorDialog = AngularExternal.dialog(CuratedColorPicker, {title: "Colorpicker"});
 
 class ColorCommand
 {
