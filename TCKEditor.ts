@@ -14,6 +14,10 @@ import DEFAULT_PLUGINS = require('/Libraries/TCKEditor/DEFAULT_PLUGINS');
 
 // Load editorConfig
 import editorConfig = require('/Libraries/TCKEditor/ckeditor/config');
+
+// Add web fonts
+import editor_webfonts = require('/Libraries/TCKEditor/ailabs/editor-webfonts');
+
 CKEditor.editorConfig(CKEditor.config);
 
 // NOTE: ckeditor_base is CORE, imported everywhere but here.
