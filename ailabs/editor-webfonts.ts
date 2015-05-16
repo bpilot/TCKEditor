@@ -1,20 +1,14 @@
 import CKEditor = require('/Libraries/TCKEditor/ckeditor/core/CKEDITOR_BOOTSTRAPPER');
 
 // Add web fonts
-import FontFoundryClient = require('/Shopwindow/FontFoundry/FontFoundryClient');
+import FontFoundryClient = require('/Shopwindow/FontFoundry/FontFoundryClient'); // Used for dropdown and detecting use of fonts.
 
 // Set fonts.
 var NATIVE_FONTS = "Arial/Arial, Helvetica, sans-serif;Comic Sans MS/Comic Sans MS, cursive;Courier New/Courier New, Courier, monospace;Georgia/Georgia, serif;Lucida Sans Unicode/Lucida Sans Unicode, Lucida Grande, sans-serif;Tahoma/Tahoma, Geneva, sans-serif;Times New Roman/Times New Roman, Times, serif;Trebuchet MS/Trebuchet MS, Helvetica, sans-serif;Verdana/Verdana, Geneva, sans-serif";
 
-var web_fonts: string[];
+var web_fonts = FontFoundryClient.fontsInstalled();
 
-alert("KLUDGE: Fix labels case mismatch");
-FontFoundryClient.fontsInstalled()
-.then(function(font_names)
-{
-  web_fonts = font_names;
-  CKEditor.config.font_names += [NATIVE_FONTS].concat(font_names).join(';');
-});
+CKEditor.config.font_names += [NATIVE_FONTS].concat(web_fonts).join(';');
 
 // Extend editor prototype to add support for web fonts.
 CKEditor.editor.prototype.getFonts = function(): string[]
@@ -30,7 +24,7 @@ CKEditor.editor.prototype.getFonts = function(): string[]
     font_name = font_name.split("'")[1];
 
     if ( font_name &&
-         ~web_fonts.indexOf(font_name) && // IS A WEB FONT
+         FontFoundryClient.haveFont(font_name) && // IS A WEB FONT
          !~font_names.indexOf(font_name) )
     {
       font_names.push(font_name);
