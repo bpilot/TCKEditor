@@ -21,8 +21,7 @@ CKEditor.editor.prototype.getFonts = function(): string[]
   for (var i=0; i < len; i++)
   {
     var font_name = elements[i].style.fontFamily;
-    font_name = font_name.split("'")[1];
-
+    font_name = font_name.split("'")[1] || font_name; // Font name may not be quoted (in case it doesn't have spaces).
     if ( font_name &&
          FontFoundryClient.haveFont(font_name) && // IS A WEB FONT
          !~font_names.indexOf(font_name) )
