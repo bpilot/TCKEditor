@@ -8,7 +8,7 @@ var NATIVE_FONTS = "Arial/Arial, Helvetica, sans-serif;Comic Sans MS/Comic Sans 
 
 var web_fonts = FontFoundryClient.fontsInstalled();
 
-CKEditor.config.font_names += [NATIVE_FONTS].concat(web_fonts).join(';');
+CKEditor.config.font_names = [NATIVE_FONTS].concat(web_fonts).join(';');
 
 // Extend editor prototype to add support for web fonts.
 CKEditor.editor.prototype.getFonts = function(): string[]
