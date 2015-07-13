@@ -1,10 +1,9 @@
 import CKEDITOR = require('/Libraries/TCKEditor/ckeditor/core/ckeditor_base');
 
-import MediaReceiver = require('/Libraries/Michigan/Michigan1/lib/PhotoServiceClient/MediaReceiver');
-import NgUtil = require('/Libraries/Common/angular/util/NgUtil');
-import NgMediaUploader = require('/Libraries/Michigan/Michigan1/lib/PhotoServiceClient/MediaUploader');
+import MediaReceiver = require('/Libraries/Common/services/media/MediaReceiver');
+import MediaUploaderPkg = require('/Libraries/Common/services/media/MediaUploader');
 
-var MediaUploader = NgUtil.serviceAccessorFactory('media-uploader')('$mediaUploader');
+var MediaUploader = new MediaUploaderPkg.MediaUploader();
 
 /**
  * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
@@ -20,7 +19,7 @@ CKEDITOR.dialog.add( 'image2', function( editor ) {
 
   // BEGIN AI LABS PATCH
   var upload_cont_id = CKEDITOR.tools.getNextId();
-  var  AILABS_UPLOAD_TEMPLATE =
+  var AILABS_UPLOAD_TEMPLATE =
   '<div class="ck-ailabs-upload-cont" id="' + upload_cont_id + '">' +
   '<strong>Drop Image</strong><br>&#40;<span>or click</span>&#41;' +
   '</div>';

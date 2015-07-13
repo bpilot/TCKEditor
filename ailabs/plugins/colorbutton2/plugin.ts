@@ -1,8 +1,8 @@
 ﻿import CKEDITOR = require('/Libraries/TCKEditor/ckeditor/core/ckeditor');
 import CuratedColorPicker = require('/Libraries/Michigan/Michigan1/widgets/CuratedColorPicker');
-import AngularExternal = require('/Libraries/Michigan/Michigan2/lib/angular-objectoriented/AngularExternal');
+import FDialog = require('/Libraries/Common/Fusion/FDialog');
 
-var colorDialog = AngularExternal.dialog(CuratedColorPicker, {title: "Colorpicker"});
+var colorDialog = new CuratedColorPicker();
 
 class ColorCommand
 {
@@ -11,7 +11,8 @@ class ColorCommand
 	exec(editor): boolean
   {
     var colorStyle = this.colorStyle;
-    colorDialog.prompt()
+
+    FDialog.create(colorDialog, {title: "Colorpicker"})
     .submit(function(result: string)
     {
       editor.focus();
