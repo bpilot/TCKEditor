@@ -2,8 +2,6 @@
 import CuratedColorPicker = require('/Libraries/Michigan/Michigan1/widgets/CuratedColorPicker');
 import FDialog = require('/Libraries/Common/Fusion/FDialog');
 
-var colorDialog = new CuratedColorPicker();
-
 class ColorCommand
 {
 	constructor(private colorStyle) { } // Color style tells us where the color is set, BG or FG.
@@ -12,6 +10,7 @@ class ColorCommand
   {
     var colorStyle = this.colorStyle;
 
+    var colorDialog = new CuratedColorPicker();
     FDialog.create(colorDialog, {title: "Colorpicker"})
     .submit(function(result: string)
     {
