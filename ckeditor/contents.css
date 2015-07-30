@@ -5,15 +5,14 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 
 .tckeditor-content
 {
-	/* Font */
-	font-family: sans-serif, Arial, Verdana, "Trebuchet MS";
-	font-size: 12px;
+  /* Font */
+  font-family: sans-serif, Arial, Verdana, "Trebuchet MS";
+  font-size: 12px;
 
-	/* Text color */
-	color: #333;
+  /* Text color */
+  color: #333;
 
-	padding: 10px;
-  box-sizing: border-box;
+  padding: 0;
   outline: 0;
 
   word-wrap: break-word;
