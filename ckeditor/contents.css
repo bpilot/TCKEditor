@@ -21,6 +21,7 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
 div.tckeditor-content
 {
   padding: 10px;
+  box-sizing: border-box;
 }
 
 .tckeditor-content
