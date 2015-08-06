@@ -22,10 +22,16 @@ div.tckeditor-content
   box-sizing: border-box;
 }
 
+div.tckeditor-content
+{
+  padding: 10px;
+  box-sizing: border-box;
+}
+
 .tckeditor-content
 {
-	font-size: 13px;
-	line-height: 1.2;
+  font-size: 13px;
+  line-height: 1.2;
 }
 
 .tckeditor-content blockquote
