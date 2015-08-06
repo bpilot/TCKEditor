@@ -18,10 +18,15 @@ For licensing, see LICENSE.md or http://ckeditor.com/license
   word-wrap: break-word;
 }
 
+div.tckeditor-content
+{
+  padding: 10px;
+}
+
 .tckeditor-content
 {
-	font-size: 13px;
-	line-height: 1.2;
+  font-size: 13px;
+  line-height: 1.2;
 }
 
 .tckeditor-content blockquote
