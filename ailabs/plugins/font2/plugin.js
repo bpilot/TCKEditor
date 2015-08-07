@@ -365,6 +365,6 @@ function fontSizeIncrease(editor, styles, amount)
   var new_value = SIZES[SIZES.indexOf(AI_CURRENT_FONT || "16")+amount]
   if (new_value == null) { return; }
   // END MOVEME
-  applyFontStyleValue(editor, styles, new_value, AI_CURRENT_FONT);
+  applyFontStyleValue(editor, styles, new_value, AI_CURRENT_FONT || "16");
 }
 // AI LABS PATCH END: Relative size change
