@@ -5,6 +5,7 @@
 
 // This plugin has been patched to allow relative font size change.
 
+
 var AI_CURRENT_FONT = "";
 var AI_FONTSIZE_STYLES = {};
 
