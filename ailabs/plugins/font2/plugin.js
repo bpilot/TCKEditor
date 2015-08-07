@@ -5,6 +5,7 @@
 
 // This plugin has been patched to allow relative font size change.
 
+
 var AI_CURRENT_FONT = "";
 var AI_FONTSIZE_STYLES = {};
 
@@ -361,10 +362,9 @@ var SIZES = ["8", "9", "10", "11", "12", "14", "16", "18", "20", "22", "24", "26
 function fontSizeIncrease(editor, styles, amount)
 {
   // BEGIN MOVEME
-  var new_value = SIZES[SIZES.indexOf(AI_CURRENT_FONT)+amount]
+  var new_value = SIZES[SIZES.indexOf(AI_CURRENT_FONT || "16")+amount]
   if (new_value == null) { return; }
   // END MOVEME
   applyFontStyleValue(editor, styles, new_value, AI_CURRENT_FONT);
 }
-
 // AI LABS PATCH END: Relative size change
