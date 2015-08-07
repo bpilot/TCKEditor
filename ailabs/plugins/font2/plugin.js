@@ -366,4 +366,5 @@ function fontSizeIncrease(editor, styles, amount)
   // END MOVEME
   applyFontStyleValue(editor, styles, new_value, AI_CURRENT_FONT);
 }
+
 // AI LABS PATCH END: Relative size change
