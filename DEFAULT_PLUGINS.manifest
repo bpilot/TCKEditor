@@ -29,7 +29,7 @@
               {"name": "/Libraries/TCKEditor/ckeditor/plugins/find/plugin", "local": "plugin_find"},
               {"name": "/Libraries/TCKEditor/ckeditor/plugins/flash/plugin", "local": "plugin_flash"},
               {"name": "/Libraries/TCKEditor/ckeditor/plugins/floatingspace/plugin", "local": "plugin_floatingspace"},
-              {"name": "/Libraries/TCKEditor/ckeditor/plugins/font/plugin", "local": "plugin_font"},
+              {"name": "/Libraries/TCKEditor/ailabs/plugins/font2/plugin", "local": "plugin_font"},
               {"name": "/Libraries/TCKEditor/ckeditor/plugins/format/plugin", "local": "plugin_format"},
               {"name": "/Libraries/TCKEditor/ckeditor/plugins/forms/plugin", "local": "plugin_forms"},
               {"name": "/Libraries/TCKEditor/ckeditor/plugins/horizontalrule/plugin", "local": "plugin_horizontalrule"},
