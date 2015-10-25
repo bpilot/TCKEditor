@@ -24,7 +24,7 @@ export function stripTrailingWhitespace(user_html: string): string
   var root = document.createElement('div');
   root.innerHTML = user_html;
 
-  var last_child;
+  var last_child: Node;
   while ( root.childNodes.length>0 &&
           contains_only_whitespace(last_child = root.lastChild) ) // Removes elements at end (most likely <p>) until non-whitespace reached
   {

@@ -1,4 +1,4 @@
 {
-  "imports": [{"name": "/Libraries/TCKEditor/ckeditor/plugins/clipboard/dialogs/paste", "local": "paste_dialog"}],
+  "imports": [{"name": "/ZealandLib/TCKEditor/ckeditor/plugins/clipboard/dialogs/paste", "local": "paste_dialog"}],
   "stylesheets": ["icons/icons.css"]
 }

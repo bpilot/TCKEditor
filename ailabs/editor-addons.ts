@@ -1,6 +1,6 @@
 
-import CKEDITOR = require('/Libraries/TCKEditor/ckeditor/core/ckeditor_base');
-import EditorBase = require('/Libraries/TCKEditor/ckeditor/core/editor_basic');
+import CKEDITOR = require("/ZealandLib/TCKEditor/ckeditor/core/ckeditor_base");
+import EditorBase = require("/ZealandLib/TCKEditor/ckeditor/core/editor_basic");
 
 // Returns height required to contain all content without scrolling.
 EditorBase.prototype.contentHeight = function(): number

@@ -1,12 +1,12 @@
-﻿import CKEDITOR = require('/Libraries/TCKEditor/ckeditor/core/ckeditor');
-import CuratedColorPicker = require('/Libraries/Michigan/Michigan1/widgets/CuratedColorPicker');
-import FDialog = require('/Libraries/Common/Fusion/FDialog');
+﻿import CKEDITOR = require("/ZealandLib/TCKEditor/ckeditor/core/ckeditor");
+import CuratedColorPicker = require("/Zealand/legacy-components/CuratedColorPicker");
+import FDialog = require("/ZealandLib/legacy-libs/Fusion/FDialog");
 
 class ColorCommand
 {
-	constructor(private colorStyle) { } // Color style tells us where the color is set, BG or FG.
+  constructor(private colorStyle: any) { } // Color style tells us where the color is set, BG or FG.
 	
-	exec(editor): boolean
+  exec(editor: any): boolean
   {
     var colorStyle = this.colorStyle;
 
@@ -23,29 +23,30 @@ class ColorCommand
       editor.fire('saveSnapshot');
     });
     return false;
-	}
+  }
 
-	canUndo = true;
-	readOnly = false;
-	modes = { wysiwyg: true };
+  canUndo = true;
+  readOnly = false;
+  modes = { wysiwyg: true };
 }
 
-CKEDITOR.plugins.add('colorbutton2', {
-
-	init: function( editor ) {
+CKEDITOR.plugins.add('colorbutton2',
+{
+  init: function( editor: any )
+  {
 
 		// Register the command.
 		editor.addCommand("fgcolor_prompt", new ColorCommand(CKEDITOR.config.colorButton_foreStyle) );
     editor.addCommand("bgcolor_prompt", new ColorCommand(CKEDITOR.config.colorButton_backStyle) );
 
-		// Register the foreground toolbar button.
-		editor.ui.addButton("TextColor",
+    // Register the foreground toolbar button.
+    editor.ui.addButton("TextColor",
     {
       className: "colorbutton-btn",
 			label: "Text Color",
 			command: "fgcolor_prompt",
 			toolbar: 'document,50'
-		});
+   });
 
 		// Register the background toolbar button.
     editor.ui.addButton("BGColor",
@@ -54,8 +55,8 @@ CKEDITOR.plugins.add('colorbutton2', {
 			label: "Background Color",
 			command: "bgcolor_prompt",
 			toolbar: 'document,51'
-		});
-	}
+    });
+  }
 });
 
 
@@ -64,7 +65,7 @@ CKEDITOR.config.colorButton_foreStyle = {
 	element: 'span',
 	styles: { 'color': '#(color)' },
 	overrides: [ {
-		element: 'font', attributes: { 'color': null }
+		element: 'font', attributes: { 'color': <string>null }
 	} ]
 };
 
