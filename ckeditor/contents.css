@@ -163,3 +163,10 @@ div.tckeditor-content
 	border: none;
 	outline: 1px solid #0782C1;
 }
+
+.tckeditor-content a
+{
+  color: inherit !important;
+  text-decoration: underline !important;
+}
+
