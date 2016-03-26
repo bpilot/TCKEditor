@@ -1,9 +1,10 @@
 import CKEDITOR = require("/ZealandLib/TCKEditor/ckeditor/core/ckeditor_base");
 
 import MediaReceiver = require("/ZealandLib/services/media/MediaReceiver");
-import MediaUploaderPkg = require("/ZealandLib/services/media/MediaUploader");
+import MediaUploaderClass = require("/ZealandLib/services/media/MediaUploader");
+import mtypes = require("/ZealandLib/services/media/types");
 
-var MediaUploader = new MediaUploaderPkg.MediaUploader();
+var MediaUploader = new MediaUploaderClass();
 
 /**
  * @license Copyright (c) 2003-2015, CKSource - Frederico Knabben. All rights reserved.
@@ -429,7 +430,7 @@ CKEDITOR.dialog.add( 'image2', function( editor: any ) {
               var dialog_contents = this._.dialog.parts.contents.$;
               var src_input = dialog_contents.querySelector('input.cke_dialog_ui_input_text');
 
-              function upload_complete_callback(result: MediaUploaderPkg.CreateImageResponse)
+              function upload_complete_callback(result: mtypes.CreateImageResponse)
               {
                 src_input.value = result.link; // Set value of src input field for user!
               }
