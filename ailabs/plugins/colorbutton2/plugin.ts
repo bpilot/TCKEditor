@@ -1,4 +1,4 @@
-﻿import CKEDITOR = require("/ZealandLib/TCKEditor/ckeditor/core/ckeditor");
+﻿import CKEDITOR = require("/TCKEditor/ckeditor/core/ckeditor");
 import CuratedColorPicker = require("/Zealand/legacy-components/CuratedColorPicker");
 import FDialog = require("/ZealandLib/legacy-libs/Fusion/FDialog");
 

@@ -1,4 +1,4 @@
 {
-  "imports": [{"name": "/ZealandLib/TCKEditor/ckeditor/plugins/link/dialogs/link", "local": "link_dialog"}],
+  "imports": [{"name": "/TCKEditor/ckeditor/plugins/link/dialogs/link", "local": "link_dialog"}],
   "stylesheets": ["icons/icons.css"]
 }

@@ -1,4 +1,4 @@
-import CKEDITOR = require("/ZealandLib/TCKEditor/ckeditor/core/ckeditor_base");
+import CKEDITOR = require("/TCKEditor/ckeditor/core/ckeditor_base");
 
 import MediaReceiver = require("/ZealandLib/services/media/MediaReceiver");
 import MediaUploaderClass = require("/ZealandLib/services/media/MediaUploader");

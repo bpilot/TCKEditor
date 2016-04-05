@@ -1,4 +1,4 @@
-import CKEditor = require("/ZealandLib/TCKEditor/ckeditor/core/CKEDITOR_BOOTSTRAPPER");
+import CKEditor = require("/TCKEditor/ckeditor/core/CKEDITOR_BOOTSTRAPPER");
 
 // Add web fonts
 import FontFoundryClient = require("/Zealand/FontFoundry/FontFoundryClient"); // Used for dropdown and detecting use of fonts.
