@@ -2,7 +2,7 @@ import CKEDITOR = require("/TCKEditor/ckeditor/core/ckeditor_base");
 
 import MediaReceiver = require("/ZealandLib/services/media/MediaReceiver");
 import MediaUploaderClass = require("/ZealandLib/services/media/MediaUploader");
-import mtypes = require("/ZealandLib/services/media/types");
+import mtypes = require("/AILabsToolkit/media/types");
 
 var MediaUploader = new MediaUploaderClass();
 
