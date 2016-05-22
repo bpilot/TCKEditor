@@ -22,12 +22,6 @@ div.tckeditor-content
   box-sizing: border-box;
 }
 
-div.tckeditor-content
-{
-  padding: 10px;
-  box-sizing: border-box;
-}
-
 .tckeditor-content
 {
   font-size: 13px;
