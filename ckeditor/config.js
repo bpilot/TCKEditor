@@ -8,6 +8,12 @@ CKEDITOR.editorConfig = function( config ) {
   config.floatSpacePinnedOffsetY = 30;
   config.format_tags = 'p;h1;h2;h3';
 
+  /* Semantic classes */
+  config.format_p = {element: "p", attributes: {"class": "texttype"} };
+  config.format_h1 = {element: "h1", attributes: {"class": "texttype texttype-heading1"} };
+  config.format_h2 = {element: "h2", attributes: {"class": "texttype texttype-heading2"} };
+  config.format_h3 = {element: "h3", attributes: {"class": "texttype texttype-heading3"} };
+
 	// Define changes to default configuration here. For example:
 	// config.language = 'fr';
 	// config.uiColor = '#AADC6E';
