@@ -117,5 +117,7 @@
               {"name": "/TCKEditor/ckeditor/plugins/table/lang/en", "local": "plugin_table_lang"},
               {"name": "/TCKEditor/ckeditor/plugins/templates/lang/en", "local": "plugin_templates_lang"},
               {"name": "/TCKEditor/ckeditor/plugins/toolbar/lang/en", "local": "plugin_toolbar_lang"},
-              {"name": "/TCKEditor/ckeditor/plugins/undo/lang/en", "local": "plugin_undo_lang"}]
+              {"name": "/TCKEditor/ckeditor/plugins/undo/lang/en", "local": "plugin_undo_lang"},
+              
+              {"name": "/TCKEditor/ckeditor/plugins/confighelper/plugin", "local": "plugin_confighelper"}]
 }
