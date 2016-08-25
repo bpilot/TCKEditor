@@ -6,7 +6,7 @@ a.cke_button.basicstyles-btn span
 
 span.cke_button__bold_icon { background-position:0 0px; }
 span.cke_button__italic_icon { background-position:0 -16px; }
-span.cke_button__underline_icon { background-position:0 -32px; }
-span.cke_button__strikethrough_icon { background-position:0 -48px; }
+span.cke_button__underline_icon { background-position:0 -80px; }
+span.cke_button__strikethrough_icon { background-position:0 -32px; }
 span.cke_button__subscript_icon { background-position:0 -64px; }
 span.cke_button__superscript_icon { background-position:0 -80px; }
