@@ -12,7 +12,7 @@ class ColorCommand
 
     var colorDialog = new CuratedColorPicker();
     FDialog.create(colorDialog, {title: "Colorpicker"})
-    .submit(function(result: string)
+    .affirmed(function(result: string)
     {
       editor.focus();
       editor.fire('saveSnapshot');

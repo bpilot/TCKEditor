@@ -447,7 +447,7 @@ CKEDITOR.dialog.add( 'image2', function( editor: any ) {
               upload_cont.addEventListener("click", function()
               {
                 MediaUploader.uploadFromDesktop()
-                .submit(upload_complete_callback);
+                .affirmed(upload_complete_callback);
               });
             },
             html: AILABS_UPLOAD_TEMPLATE
