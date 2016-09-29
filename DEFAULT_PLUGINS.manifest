@@ -49,6 +49,7 @@
               {"name": "/TCKEditor/ckeditor/plugins/maximize/plugin", "local": "plugin_maximize"},
               {"name": "/TCKEditor/ckeditor/plugins/newpage/plugin", "local": "plugin_newpage"},
               {"name": "/TCKEditor/ckeditor/plugins/pagebreak/plugin", "local": "plugin_pagebreak"},
+              {"name": "/TCKEditor/ckeditor/plugins/pastefromword/filter/default", "local": "cleanword_filter"},
               {"name": "/TCKEditor/ckeditor/plugins/pastefromword/plugin", "local": "plugin_pastefromword"},
               {"name": "/TCKEditor/ckeditor/plugins/pastetext/plugin", "local": "plugin_pastetext"},
               {"name": "/TCKEditor/ckeditor/plugins/preview/plugin", "local": "plugin_preview"},
