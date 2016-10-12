@@ -2,7 +2,7 @@
 import CKEditor = require("/TCKEditor/ckeditor/core/CKEDITOR_BOOTSTRAPPER");
 import ck_editable = require("/TCKEditor/ckeditor/core/editable");
 
-import default_skin = require("/TCKEditor/ckeditor/skins/moono/skin");
+import default_skin = require("/TCKEditor/ailabs/skins/ailabs-moono/skin");
 import lang_en = require("/TCKEditor/ckeditor/lang/en");
 import ck_styles = require("/TCKEditor/ckeditor/styles");
 

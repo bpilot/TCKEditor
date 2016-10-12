@@ -3,11 +3,9 @@
                   "presets.css",
                   "elementspath.css",
                   "editor.css",
-                  "mainui.css",
                   "menu.css",
                   "colorpanel.css",
                   "richcombo.css",
-                  "toolbar.css",
                   "panel.css",
                   "editor_gecko.css",
                   "dialog.css"]
