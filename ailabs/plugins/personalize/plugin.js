@@ -1,8 +1,6 @@
 
 CKEDITOR.plugins.add("personalize",
 {
-  icons: "abbr",
-
   init: function(editor)
   {
     function handleInsertCurly(field)
@@ -23,8 +21,7 @@ CKEDITOR.plugins.add("personalize",
 
     editor.ui.addButton("Personalize", {
       label: "Personalize",
-      command: "personalize",
-      toolbar: "insert"
+      command: "personalize"
     });
   }
 });

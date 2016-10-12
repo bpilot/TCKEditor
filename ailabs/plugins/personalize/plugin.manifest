@@ -1,3 +1,4 @@
 {
-  "imports": [{"local": "PersonalizationDialog", "name": "/Zealand/crm/Fields/PersonalizationDialog"}]
+  "imports": [{"local": "PersonalizationDialog", "name": "/Zealand/crm/Fields/PersonalizationDialog"}],
+  "stylesheets": ["showbtn-style.css"]
 }
