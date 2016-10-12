@@ -1,0 +1,3 @@
+{
+  "imports": [{"local": "PersonalizationDialog", "name": "/Zealand/crm/Fields/PersonalizationDialog"}]
+}
