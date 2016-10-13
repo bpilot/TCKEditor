@@ -1,4 +1,4 @@
 {
   "imports": [{"local": "moono_skin", "name": "/TCKEditor/ckeditor/skins/moono/skin"}],
-  "stylesheets": ["ailabs-mainui.css", "ailabs-toolbar.css", "ailabs-richcombo.css"]
+  "stylesheets": ["ailabs-mainui.css", "ailabs-toolbar.css", "ailabs-richcombo.css", "ailabs-icons.css"]
 }

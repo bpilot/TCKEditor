@@ -1,0 +1,65 @@
+/* basic styles override */
+.cke_toolbar a.cke_button.basicstyles-btn span
+{
+  background-image: url(icons-glyph.png);
+}
+
+span.cke_button__bold_icon { background-position:0 0px; }
+span.cke_button__italic_icon { background-position:0 -16px; }
+span.cke_button__underline_icon { background-position: 0 -2136px; }
+span.cke_button__strikethrough_icon { background-position:0 -32px; }
+span.cke_button__subscript_icon { background-position:0 -64px; }
+span.cke_button__superscript_icon { background-position:0 -80px; }
+
+/* justify override */
+.cke_toolbar a.cke_button.justify-btn span
+{
+  background-image: url(icons-glyph.png);
+}
+
+span.cke_button__justifyblock_icon { background-position: 0 -768px; }
+span.cke_button__justifycenter_icon { background-position: 0 -792px; }
+span.cke_button__justifyleft_icon { background-position: 0 -816px; }
+span.cke_button__justifyright_icon { background-position: 0 -840px; }
+
+/* colorbutton2 */
+span.cke_button__textcolor_icon,
+span.cke_button__bgcolor_icon
+{
+  background-image: url(icons-glyph.png);
+}
+
+span.cke_button__textcolor_icon { background-position: 0 -2040px; }
+span.cke_button__bgcolor_icon { background-position: 0 -72px; }
+
+/* removeformat */
+span.cke_button__removeformat_icon
+{
+  background-image: url(icons-glyph.png);
+  background-position: 0 -1464px;
+}
+
+/* pastetext */
+span.cke_button__pastetext_icon
+{
+  background-image: url(icons-glyph.png);
+  background-position: 0 -1272px;
+}
+
+/* indent */
+a.cke_button.indent-btn span
+{
+  background-image: url(icons-glyph.png);
+}
+
+span.cke_button__indent_icon { background-position: 0 -720px; }
+span.cke_button__outdent_icon { background-position: 0 -696px; }
+
+/* list */
+a.cke_button.list-btn span
+{
+  background-image: url(icons-glyph.png);
+}
+
+span.cke_button__bulletedlist_icon { background-position: 0 -216px; }
+span.cke_button__numberedlist_icon { background-position: 0 -1008px; }

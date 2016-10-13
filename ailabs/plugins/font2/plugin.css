@@ -1,0 +1,10 @@
+
+/* AI Labs fontsize plugin icons */
+span.cke_button__fontsizeup_icon,
+span.cke_button__fontsizedown_icon
+{
+  background-image: url(icons-glyph.png);
+}
+
+span.cke_button__fontsizeup_icon { background-position: 0 -26px; }
+span.cke_button__fontsizedown_icon { background-position: 0 0; }
