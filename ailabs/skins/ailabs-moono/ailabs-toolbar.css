@@ -53,6 +53,8 @@ Special outer level classes used in this file:
 .cke_toolbar
 {
 	float: left;
+
+    font: normal normal normal 12px "Open Sans", Helvetica, sans-serif !important;
 }
 
 .cke_rtl .cke_toolbar
@@ -66,7 +68,7 @@ Special outer level classes used in this file:
 	float: left;
 	margin: 0 6px 5px 0;
 
-	border-radius: 3px;
+	border-radius: 4px;
 
 	/* BEGIN AILABS PATCH */
     border: 1px solid #2d2d2d;
@@ -93,7 +95,7 @@ a.cke_button
 {
 	display: inline-block;
 	height: 18px;
-	padding: 4px 6px;
+	padding: 8px 6px;
 	outline: none;
 	cursor: default;
 	float: left;
@@ -265,32 +267,7 @@ a.cke_button_disabled:active
    buttons into sub-groups. */
 .cke_toolbar_separator
 {
-	float: left;
-	background-color: #c0c0c0;
-	background-color: rgba(0,0,0,.2);
-	margin: 5px 2px 0;
-	height: 18px;
-	width: 1px;
-
-	-webkit-box-shadow: 1px 0 1px rgba(255,255,255,.5);
-	-moz-box-shadow: 1px 0 1px rgba(255,255,255,.5);
-	box-shadow: 1px 0 1px rgba(255,255,255,.5);
-}
-
-.cke_rtl .cke_toolbar_separator
-{
-	float: right;
-
-	-webkit-box-shadow: -1px 0 1px rgba(255,255,255,.1);
-	-moz-box-shadow: -1px 0 1px rgba(255,255,255,.1);
-	box-shadow: -1px 0 1px rgba(255,255,255,.1);
-}
-
-.cke_hc .cke_toolbar_separator
-{
-	width: 0;
-	border-left: 1px solid;
-	margin: 1px 5px 0 0px;
+  display: none;
 }
 
 /* The dummy element that breaks toolbars.
