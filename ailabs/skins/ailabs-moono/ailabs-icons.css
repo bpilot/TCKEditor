@@ -4,12 +4,12 @@
   background-image: url(icons-glyph.png);
 }
 
-span.cke_button__bold_icon { background-position:0 0px; }
-span.cke_button__italic_icon { background-position:0 -16px; }
+span.cke_button__bold_icon { background-position: 0 -168px; }
+span.cke_button__italic_icon { background-position: 0 -744px; }
 span.cke_button__underline_icon { background-position: 0 -2136px; }
-span.cke_button__strikethrough_icon { background-position:0 -32px; }
-span.cke_button__subscript_icon { background-position:0 -64px; }
-span.cke_button__superscript_icon { background-position:0 -80px; }
+span.cke_button__strikethrough_icon { background-position: 0 -1850px; }
+span.cke_button__subscript_icon { background-position: 0 -64px; }
+span.cke_button__superscript_icon { background-position: 0 -80px; }
 
 /* justify override */
 .cke_toolbar a.cke_button.justify-btn span
@@ -63,3 +63,28 @@ a.cke_button.list-btn span
 
 span.cke_button__bulletedlist_icon { background-position: 0 -216px; }
 span.cke_button__numberedlist_icon { background-position: 0 -1008px; }
+
+/* undo */
+a.cke_button.undo-btn span
+{
+  background-image: url(icons-glyph.png);
+}
+
+span.cke_button__redo_icon { background-position: 0 -1416px; }
+span.cke_button__undo_icon { background-position: 0 -1440px; }
+
+/* link */
+a.cke_button.link-btn span
+{
+  background-image: url(icons-glyph.png);
+}
+
+span.cke_button__link_icon { background-position: 0 -888px; }
+span.cke_button__unlink_icon { background-position: 0 -2208px; }
+
+/* image2 */
+span.cke_button__image_icon
+{
+  background-image: url(icons-glyph.png);
+	background-position: 0 -648px;
+}
