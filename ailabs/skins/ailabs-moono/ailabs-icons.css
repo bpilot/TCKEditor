@@ -70,8 +70,8 @@ a.cke_button.undo-btn span
   background-image: url(icons-glyph.png);
 }
 
-span.cke_button__redo_icon { background-position: 0 -1416px; }
-span.cke_button__undo_icon { background-position: 0 -1440px; }
+span.cke_button__redo_icon { background-position: 0 -1440px; }
+span.cke_button__undo_icon { background-position: 0 -1416px; }
 
 /* link */
 a.cke_button.link-btn span

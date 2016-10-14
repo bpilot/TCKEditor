@@ -71,8 +71,6 @@ The visual representation of a rich combo widget looks as follows:
 	float: left;
 
 	border-radius: 3px;
-
-	padding: 4px 6px;
 }
 
 /* Different states of the container. */
