@@ -18,6 +18,8 @@ import editorConfig = require("/TCKEditor/ckeditor/config");
 // Add web fonts
 import editor_webfonts = require("/TCKEditor/ailabs/editor-webfonts");
 
+import editor_custom_lang = require("/TCKEditor/ailabs/editor-custom-lang");
+
 CKEditor.editorConfig(CKEditor.config);
 
 // NOTE: ckeditor_base is CORE, imported everywhere but here.
