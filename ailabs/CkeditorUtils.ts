@@ -1,4 +1,19 @@
 
+export function stripSingleRootParagraphTag(user_html: string): string
+{
+  // Parse HTML
+  var root = document.createElement('div');
+  root.innerHTML = user_html;
+
+  if (root.childElementCount == 1 &&
+      root.firstElementChild.tagName == "P") {
+    return (<HTMLElement>root.firstElementChild).innerHTML;
+  }
+  else {
+    return user_html; // No-op
+  }
+}
+
 var CONTAINS_NON_WHITESPACE_REGEX = /\S+/;
 function contains_only_whitespace(node: Node)
 {
