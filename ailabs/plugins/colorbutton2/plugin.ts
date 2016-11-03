@@ -2,13 +2,20 @@
 import CuratedColorPicker = require("/Zealand/legacy-components/CuratedColorPicker");
 import FDialog = require("/ZealandLib/legacy-libs/Fusion/FDialog");
 
+// Added 11/3/2016 from: https://github.com/ckeditor/ckeditor-dev/blob/master/plugins/colorbutton/plugin.js
+function isUnstylable(ele: any): boolean
+{
+  return ( ele.getAttribute( 'contentEditable' ) == 'false' ) || ele.getAttribute( 'data-nostyle' );
+}
+
 class ColorCommand
 {
-  constructor(private colorStyle: any) { } // Color style tells us where the color is set, BG or FG.
+  constructor(private colorStyle: any, private isBackground: boolean) { } // Color style tells us where the color is set, BG or FG.
 	
   exec(editor: any): boolean
   {
     var colorStyle = this.colorStyle;
+    var isBackground = this.isBackground;
 
     var colorDialog = new CuratedColorPicker();
     colorDialog.addNoColorOption();
@@ -21,6 +28,17 @@ class ColorCommand
       editor.removeStyle( new CKEDITOR.style(colorStyle, { color: 'inherit' } ) );
       // Set on editor.
       if (result != null) {
+
+					colorStyle.childRule = isBackground ?
+					function( element: any ) {
+						// It's better to apply background color as the innermost style. (#3599)
+						// Except for "unstylable elements". (#6103)
+						return isUnstylable( element );
+					} : function( element: any ) {
+						// Fore color style must be applied inside links instead of around it. (#4772,#6908)
+						return !( element.is( 'a' ) || element.getElementsByTag( 'a' ).count() ) || isUnstylable( element );
+					};
+
         editor.applyStyle( new CKEDITOR.style(colorStyle, { color: '#' + result } ) );
       }
       editor.fire('saveSnapshot');
@@ -39,8 +57,8 @@ CKEDITOR.plugins.add('colorbutton2',
   {
 
 		// Register the command.
-		editor.addCommand("fgcolor_prompt", new ColorCommand(CKEDITOR.config.colorButton_foreStyle) );
-    editor.addCommand("bgcolor_prompt", new ColorCommand(CKEDITOR.config.colorButton_backStyle) );
+		editor.addCommand("fgcolor_prompt", new ColorCommand(CKEDITOR.config.colorButton_foreStyle, false) );
+    editor.addCommand("bgcolor_prompt", new ColorCommand(CKEDITOR.config.colorButton_backStyle, true) );
 
     // Register the foreground toolbar button.
     editor.ui.addButton("TextColor",
