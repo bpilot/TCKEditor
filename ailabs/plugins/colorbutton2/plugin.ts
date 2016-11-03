@@ -11,6 +11,7 @@ class ColorCommand
     var colorStyle = this.colorStyle;
 
     var colorDialog = new CuratedColorPicker();
+    colorDialog.addNoColorOption();
     FDialog.create(colorDialog, {title: "Colorpicker"})
     .affirmed(function(result: string)
     {
@@ -19,7 +20,9 @@ class ColorCommand
       // Clean up any conflicting style within the range.
       editor.removeStyle( new CKEDITOR.style(colorStyle, { color: 'inherit' } ) );
       // Set on editor.
-      editor.applyStyle( new CKEDITOR.style(colorStyle, { color: '#' + result } ) );
+      if (result != null) {
+        editor.applyStyle( new CKEDITOR.style(colorStyle, { color: '#' + result } ) );
+      }
       editor.fire('saveSnapshot');
     });
     return false;
