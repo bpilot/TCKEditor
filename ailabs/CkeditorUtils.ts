@@ -12,7 +12,8 @@ export function stripSingleRootParagraphTag(user_html: string): string
       !firstChildElem.style.textAlign ) {
     return firstChildElem.innerHTML;
   }
-  else if (root.childElementCount == 1) {
+  else if (root.childElementCount == 1 &&
+           firstChildElem.style.textAlign) {
     var top = "<div style=\"text-align: " + firstChildElem.style.textAlign + "\">\n";
     var end = "\n</div>";
     return top + firstChildElem.innerHTML + end; // No-op
