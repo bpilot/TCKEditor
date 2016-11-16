@@ -1,28 +1,4 @@
 
-export function stripSingleRootParagraphTag(user_html: string): string
-{
-  // Parse HTML
-  var root = document.createElement('div');
-  root.innerHTML = user_html;
-
-  var firstChildElem = (<HTMLElement>root.firstElementChild);
-
-  if (root.childElementCount == 1 &&
-      firstChildElem.tagName == "P" &&
-      !firstChildElem.style.textAlign ) {
-    return firstChildElem.innerHTML;
-  }
-  else if (root.childElementCount == 1 &&
-           firstChildElem.style.textAlign) {
-    var top = "<div style=\"text-align: " + firstChildElem.style.textAlign + "\">\n";
-    var end = "\n</div>";
-    return top + firstChildElem.innerHTML + end; // No-op
-  }
-  else {
-    return user_html;
-  }
-}
-
 var CONTAINS_NON_WHITESPACE_REGEX = /\S+/;
 function contains_only_whitespace(node: Node)
 {
