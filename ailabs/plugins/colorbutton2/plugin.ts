@@ -83,7 +83,7 @@ CKEDITOR.plugins.add('colorbutton2',
 
 // CONFIG forestyle
 CKEDITOR.config.colorButton_foreStyle = {
-	element: 'span',
+	element: 'font', // TEST
 	styles: { 'color': '#(color)' },
 	overrides: [ {
 		element: 'font', attributes: { 'color': <string>null }
