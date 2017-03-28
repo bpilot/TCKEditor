@@ -42,7 +42,7 @@ CKEDITOR.editorConfig = function( config ) {
 		'forms,' +
 		'horizontalrule,' +
 		'htmlwriter,' +
-    'widget,' +
+        'widget,' +
 		'image2,' +
 		'iframe,' +
 		'indentlist,' +
