@@ -15,21 +15,28 @@ CKEditor.editor.prototype.getFonts = function(): string[]
 {
 	var editable = this.container.$;
 
-  var elements = editable.querySelectorAll('*');
+  var elements = editable.querySelectorAll("*");
   var len = elements.length;
-  var font_names: string[] = [];
+  var fontNames: string[] = [];
   for (var i=0; i < len; i++)
   {
-    var font_name = elements[i].style.fontFamily;
-    font_name = font_name.split("'")[1] || font_name.split("\"")[1] || font_name; // Font name may not be quoted (in case it doesn't have spaces).
-    if ( font_name &&
-         FontFoundryClient.haveFont(font_name) && // IS A WEB FONT
-         !~font_names.indexOf(font_name) )
+    var fontName: string;
+    if (elements[i].tagName == "FONT" && elements[i].hasAttribute("face") ) {
+      fontName = elements[i].getAttribute("face");
+    }
+    else {
+      fontName = elements[i].style.fontFamily;
+    }
+
+    fontName = fontName.split("'")[1] || fontName.split("\"")[1] || fontName; // Font name may not be quoted (in case it doesn't have spaces).
+    if ( fontName &&
+         FontFoundryClient.haveFont(fontName) && // IS A WEB FONT
+         !~fontNames.indexOf(fontName) )
     {
-      font_names.push(font_name);
+      fontNames.push(fontName);
     }
   }
-  return font_names;
+  return fontNames;
 };
 
 // Initialize web fonts on editor ready.
