@@ -35,6 +35,10 @@ class ColorCommand
 						// Except for "unstylable elements". (#6103)
 						return isUnstylable( element );
 					} : function( element: any ) {
+            // AI LABS PATCH
+            if ( element.is("span") ) {
+              return false;
+            }
 						// Fore color style must be applied inside links instead of around it. (#4772,#6908)
 						return !( element.is( 'a' ) || element.getElementsByTag( 'a' ).count() ) || isUnstylable( element );
 					};
