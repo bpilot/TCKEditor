@@ -1,0 +1,4 @@
+{
+  "imports": [{"name": "/TCKEditor/ailabs/plugins/link2/dialogs/link", "local": "link_dialog"}],
+  "stylesheets": []
+}

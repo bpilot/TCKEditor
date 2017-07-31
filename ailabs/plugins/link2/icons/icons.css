@@ -1,0 +1,9 @@
+
+a.cke_button.link-btn span
+{
+  background-image: url(glyph.png);
+}
+
+span.cke_button__anchor_icon { background-position:0 0px; }
+span.cke_button__link_icon { background-position:0 -16px; }
+span.cke_button__unlink_icon { background-position:0 -32px; }

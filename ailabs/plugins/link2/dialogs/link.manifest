@@ -1,0 +1,5 @@
+{
+  "imports": [
+    {"local": "RadioGroup", "name": "/ZealandLib/gui-toolkit/RadioGroup/RadioGroup"},
+    {"local": "ContentSelector", "name": "/Zealand/ContentSystem/ContentService/client/PContentSelector"}]
+}
