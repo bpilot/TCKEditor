@@ -749,6 +749,43 @@ currentRadioGroup.
 
 				var data = plugin.parseLinkAttributes( editor, element );
 
+if (data.url != null && data.url.url != null && data.url.url.indexOf("/publishservice/render/") != -1 ) {
+	// Parse URL.
+   console.log("PARSE CS2 URL", data.url);
+   try {
+	 var parts = data.url.url.split("//")[1].split("/");
+	 var contentObj = {name: parts[3], id: parts.slice(4).join("/").split("?")[0] };
+	 console.log(contentObj);
+	 data.type = "anchor";
+	   setTimeout(function() {
+	     currentContentSelector.setSelected(contentObj);
+		 if (data.target != null && data.target.name == "_blank") {
+		   currentRadioGroup.setValue(1);
+		 }
+	   }, 100);
+   }
+   catch(e) {
+	 console.log("Error:", e);
+   }
+}
+else if (data.url != null && data.url.url != null && data.url.url.indexOf("CONTENTSYSTEM_MODAL_LAUNCHER") != -1 ) {
+	// Parse URL.
+   console.log("PARSE MODAL JS URL", data.url);
+   try {
+    var parts = data.url.url.split("(")[1].split("'");
+	 var contentObj = {name: parts[1], id: parts[3] };
+	 console.log(contentObj);
+	 data.type = "anchor";
+	   setTimeout(function() {
+	     currentContentSelector.setSelected(contentObj);
+		 currentRadioGroup.setValue(2);
+	   }, 100);
+   }
+   catch(e) {
+	 console.log("Error:", e);
+   }
+}
+
 				// Record down the selected element in the dialog.
 				this._.selectedElement = element;
 
