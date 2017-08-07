@@ -4,6 +4,7 @@ import ck_editable = require("/TCKEditor/ckeditor/core/editable");
 
 import default_skin = require("/TCKEditor/ailabs/skins/ailabs-moono/skin");
 import lang_en = require("/TCKEditor/ckeditor/lang/en");
+import lang_en_gb = require("/TCKEditor/ckeditor/lang/en-gb");
 import ck_styles = require("/TCKEditor/ckeditor/styles");
 
 // AI LABS extensions to Editor
