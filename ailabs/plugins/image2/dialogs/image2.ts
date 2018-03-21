@@ -430,9 +430,9 @@ CKEDITOR.dialog.add( 'image2', function( editor: any ) {
               var dialog_contents = this._.dialog.parts.contents.$;
               var src_input = dialog_contents.querySelector('input.cke_dialog_ui_input_text');
 
-              function upload_complete_callback(result: mtypes.MediaAsset)
+              function upload_complete_callback(result: mtypes.MediaResource)
               {
-                src_input.value = result.getMediaResource<mtypes.MediaResource>().toURL(); // Set value of src input field for user!
+                src_input.value = result.toURL(); // Set value of src input field for user!
               }
 
               var upload_cont = document.getElementById(upload_cont_id);
