@@ -1,6 +1,6 @@
 import CKEDITOR = require("/TCKEditor/ckeditor/core/ckeditor_base");
 
-import MediaReceiver = require("/Zealand/Media/MediaReceiver");
+import HTML5DropMediaReceiver = require("/Zealand/Media/HTML5DropMediaReceiver");
 import MediaUploaderClass = require("/Zealand/Media/MediaUploader");
 import mtypes = require("/AILabsToolkit/media/types");
 
@@ -436,12 +436,15 @@ CKEDITOR.dialog.add( 'image2', function( editor: any ) {
               }
 
               var upload_cont = document.getElementById(upload_cont_id);
-              var mediaReceiver = new MediaReceiver(upload_cont, {dragoverClass: 'dragover'});
-              mediaReceiver.acceptMedia('photo', function(data: string)
+
+
+              function callbackFunc(data: string)
               {
                 MediaUploader.uploadBase64(data)
                 .then(upload_complete_callback);
-              });
+              }
+
+              var mediaReceiver = new HTML5DropMediaReceiver(callbackFunc, upload_cont, 'dragover');
 
               // Upload from desktop
               upload_cont.addEventListener("click", function()
