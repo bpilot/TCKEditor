@@ -823,7 +823,7 @@ if (data.type == "anchor") {
   }
   else if (currentRadioGroup.getValue() == 2 ) {
 	 var contentObj = currentContentSelector.getSelected();
-     data.url = {protocol: "", url: "javascript:CONTENTSYSTEM_MODAL_LAUNCHER.launchContent('" + contentObj.name + "', '" + contentObj.id + "')" };
+     data.url = {protocol: "", url: "javascript:CONTENTSYSTEM_MODAL_LAUNCHER.launchContent(null, '" + contentObj.name + "', '" + contentObj.id + "')" };
   }
 }
 

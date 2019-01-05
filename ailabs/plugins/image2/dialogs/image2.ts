@@ -440,8 +440,8 @@ CKEDITOR.dialog.add( 'image2', function( editor: any ) {
 
               function callbackFunc(data: string)
               {
-                MediaUploader.uploadBase64(data)
-                .then(upload_complete_callback);
+              
+
               }
 
               var mediaReceiver = new HTML5DropMediaReceiver(callbackFunc, upload_cont, 'dragover');
