@@ -141,9 +141,9 @@
 		}
 	};
 
-	CKEDITOR.domReady( function() {
-		!CKEDITOR.disableAutoInline && CKEDITOR.inlineAll();
-	} );
+//	CKEDITOR.domReady( function() {
+// Don't you dare		!CKEDITOR.disableAutoInline && CKEDITOR.inlineAll();
+//	} );
 } )();
 
 /**
