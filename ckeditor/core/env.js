@@ -312,6 +312,8 @@ if ( !CKEDITOR.env ) {
 		 */
 		env.cssClass = 'cke_browser_' + ( env.ie ? 'ie' : env.gecko ? 'gecko' : env.webkit ? 'webkit' : 'unknown' );
 
+                env.cssClass += ' use-legacy-css';
+
 		if ( env.quirks )
 			env.cssClass += ' cke_browser_quirks';
 

@@ -11,7 +11,6 @@ This file contains styles to used by all Gecko based browsers (Firefox) only.
 */
 
 /* Base it on editor.css, overriding it with styles defined in this file. */
-@import url("editor.css");
 
 .cke_bottom
 {
